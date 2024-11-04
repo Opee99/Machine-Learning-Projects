@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            height: 400px; /* Set height for proper vertical centering */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin: 0; /* Remove default margin */
+        }
+
+        .highlight {
+            font-size: 24px;
+            color: #fff;
+            background-color: #28a745; /* Green background */
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block; /* To fit the content */
+            margin: 10px 0; /* Add some space above and below */
+        }
+
+        a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 20px; /* Add space above the button */
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crop Prediction Result</h1>
+        <p>The recommended crop is:</p>
+        <p class="highlight"><strong>{{ prediction }}</strong></p> <!-- Highlighted result -->
+        <!-- Button placed below the predicted result -->
+        <a href="/">Predict Again</a>
+        <footer>
+            Powered by Gradient Boosting Classifier
+        </footer>
+    </div>
+</body>
+</html>

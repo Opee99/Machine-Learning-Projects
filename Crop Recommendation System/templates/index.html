@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Predict Your Best Crop</h1>
+        <form action="/predict" method="POST">
+            <label for="N">Nitrogen (N):</label>
+            <input type="text" name="N" placeholder="Enter nitrogen level" required>
+
+            <label for="P">Phosphorus (P):</label>
+            <input type="text" name="P" placeholder="Enter phosphorus level" required>
+
+            <label for="K">Potassium (K):</label>
+            <input type="text" name="K" placeholder="Enter potassium level" required>
+
+            <label for="temperature">Temperature (°C):</label>
+            <input type="text" name="temperature" placeholder="Enter temperature in °C" required>
+
+            <label for="humidity">Humidity (%):</label>
+            <input type="text" name="humidity" placeholder="Enter humidity in %" required>
+
+            <label for="ph">Soil pH:</label>
+            <input type="text" name="ph" placeholder="Enter soil pH level" required>
+
+            <label for="rainfall">Rainfall (mm):</label>
+            <input type="text" name="rainfall" placeholder="Enter rainfall in mm" required>
+
+            <input type="submit" value="Predict Crop">
+        </form>
+        <footer>
+            Powered by Gradient Boosting Classifier
+        </footer>
+    </div>
+</body>
+</html>
